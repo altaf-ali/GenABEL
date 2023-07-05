@@ -1022,7 +1022,8 @@ LoopNode: /* Generate a node */
 	    key = it[i] + key * kyy;
 	}
 	if (key < -1)
-	    PROBLEM "Bug in FEXACT: gave negative key" RECOVER(NULL_ENTRY);
+	    /*PROBLEM "Bug in FEXACT: gave negative key" RECOVER(NULL_ENTRY);*/
+	    printf("Bug in FEXACT: gave negative key \n");
 	/* Table index */
 	ipn = key % ldst + 1;
 	/* Find empty position */
@@ -1803,7 +1804,8 @@ void prterr(int icode, const char *mes)
      mes    - Character string containing the error message.	(Input)
   -----------------------------------------------------------------------
   */
-    PROBLEM "FEXACT error %d.\n%s", icode, mes RECOVER(NULL_ENTRY);
+    /*PROBLEM "FEXACT error %d.\n%s", icode, mes RECOVER(NULL_ENTRY);*/
+    printf("FEXACT error %d.\n", icode);
     return;
 }
 
